@@ -1,0 +1,1 @@
+/Users/adam.rocha/.bash_profile
