@@ -2,27 +2,11 @@
 export TERM=xterm-color
 export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
-# export LSCOLORS=Exfxcxdxbxegedabagacad
 export LSCOLORS=gxfxcxdxbxegedabagacad # Dark lscolor scheme
-# Don't put duplicate lines in your bash history
 export HISTCONTROL=ignoredups
-# increase history limit (100KB or 5K entries)
 export HISTFILESIZE=100000
 export HISTSIZE=5000
 
-# Readline, the line editing library that bash uses, does not know
-# that the terminal escape sequences do not take up space on the
-# screen. The redisplay code assumes, unless told otherwise, that
-# each character in the prompt is a `printable' character that
-# takes up one character position on the screen.
-
-# You can use the bash prompt expansion facility (see the PROMPTING
-# section in the manual page) to tell readline that sequences of
-# characters in the prompt strings take up no screen space.
-
-# Use the \[ escape to begin a sequence of non-printing characters,
-# and the \] escape to signal the end of such a sequence.
-# Define some colors first:
 RED='\[\e[1;31m\]'
 BOLDYELLOW='\[\e[1;33m\]'
 GREEN='\[\e[0;32m\]'
