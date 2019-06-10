@@ -40,12 +40,6 @@ NC='\[\e[0m\]' # No Color
 #PS1="\[\033[1;34;40m[\033[1;31;40m\u@\h:\w\033[1;34;40m]\033[1;37;40m $\033[0;37;0m\] "
 #PS1="${CUSTOMCOLORMIX}\\u@\h: \\W]\\$ ${NC}"
 
-# PS1 (shell prompt)
-# set variable identifying the chroot you work in (used in the prompt below)
-#if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-#    debian_chroot=$(cat /etc/debian_chroot)
-#fi
-
 #function parse_git_dirty {
 #  git diff --quiet HEAD &>/dev/null
 #  [[ $? == 1 ]] && echo "⚡"
@@ -61,11 +55,6 @@ NC='\[\e[0m\]' # No Color
 PS1="${LIGHTBLUE}\\u ${BOLDYELLOW}[\\W] ${PURPLE}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
 #PS1="${DARKCUSTOMCOLORMIX}\\u@\h:\\W]${PURPLE}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
-list_detailed_more()
-{
-	ls -lah $1 | more
-}
 
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -120,22 +109,7 @@ safe_rm()
     done
 }
 
-function github() {
-  #call from a local repo to open the repository on github in browser
-  giturl=$(git config --get remote.origin.url)
-  if [ "$giturl" == "" ]
-    then
-     echo "Not a git repository or no remote.origin.url set"
-     exit 1;
-  fi
-  giturl=${giturl/git\@github\.com\:/https://github.com/}
-  giturl=${giturl/\.git//}
-  echo $giturl
-  open $giturl
-}
-
-
-#bash git completion
+# bash git completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
