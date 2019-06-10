@@ -14,11 +14,11 @@ export HISTSIZE=5000
 # that the terminal escape sequences do not take up space on the
 # screen. The redisplay code assumes, unless told otherwise, that
 # each character in the prompt is a `printable' character that
-# takes up one character position on the screen. 
+# takes up one character position on the screen.
 
 # You can use the bash prompt expansion facility (see the PROMPTING
 # section in the manual page) to tell readline that sequences of
-# characters in the prompt strings take up no screen space. 
+# characters in the prompt strings take up no screen space.
 
 # Use the \[ escape to begin a sequence of non-printing characters,
 # and the \] escape to signal the end of such a sequence.
@@ -33,22 +33,13 @@ CUSTOMCOLORMIX='\[\e[1;30m\]'
 DARKCUSTOMCOLORMIX='\[\e[1;32m\]'
 LIGHTBLUE="\[\033[1;36m\]"
 PURPLE='\[\e[1;35m\]' #git branch
-# EG: GREEN="\[\e[0;32m\]" 
+# EG: GREEN="\[\e[0;32m\]"
 #PURPLE='\[\e[1;35m\]'
 #BLUE='\[\e[1;34m\]'
 NC='\[\e[0m\]' # No Color
 #PS1="\[\033[1;34;40m[\033[1;31;40m\u@\h:\w\033[1;34;40m]\033[1;37;40m $\033[0;37;0m\] "
+
 #PS1="${CUSTOMCOLORMIX}\\u@\h: \\W]\\$ ${NC}"
-
-#function parse_git_dirty {
-#  git diff --quiet HEAD &>/dev/null
-#  [[ $? == 1 ]] && echo "⚡"
-#}
-
-#function parse_git_branch {
-#  local branch=$(__git_ps1 "%s")
-#  [[ $branch ]] && echo "[$branch$(parse_git_dirty)]"
-#}
 
 #PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\$(parse_git_branch)\[\033[00m\]\$"
 
@@ -90,7 +81,7 @@ safe_rm()
             # Target exists and conflicts with target in Trash
             elif [ -e ~/.Trash/$file ]; then
 
-                # Increment target name until 
+                # Increment target name until
                 # there is no longer a conflict
                 i=1
                 while [ -e ~/.Trash/$file.$i ];
