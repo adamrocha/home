@@ -32,20 +32,16 @@ DARKGRAY='\[\e[1;30m\]'
 CUSTOMCOLORMIX='\[\e[1;30m\]'
 DARKCUSTOMCOLORMIX='\[\e[1;32m\]'
 LIGHTBLUE="\[\033[1;36m\]"
-PURPLE='\[\e[1;35m\]' #git branch
-# EG: GREEN="\[\e[0;32m\]"
-#PURPLE='\[\e[1;35m\]'
-#BLUE='\[\e[1;34m\]'
+PURPLE='\[\e[1;35m\]'
 NC='\[\e[0m\]' # No Color
-#PS1="\[\033[1;34;40m[\033[1;31;40m\u@\h:\w\033[1;34;40m]\033[1;37;40m $\033[0;37;0m\] "
 
-#PS1="${CUSTOMCOLORMIX}\\u@\h: \\W]\\$ ${NC}"
-
-#PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\$(parse_git_branch)\[\033[00m\]\$"
-
-PS1="${LIGHTBLUE}\\u ${BOLDYELLOW}[\\W] ${PURPLE}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
-#PS1="${DARKCUSTOMCOLORMIX}\\u@\h:\\W]${PURPLE}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
+PS1="${LIGHTBLUE}\\u ${BOLDYELLOW}[\\W] ${RED}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+# bash git completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
 
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -58,12 +54,12 @@ parse_svn_branch() {
 export -f parse_svn_branch
 
 parse_svn_url() {
- svn info 2>/dev/null | grep -e '^URL*' | sed -e 's#^URL: *\(.*\)#\1#g '
+ svn info 2>/dev/null | grep -e '^URL*' | sed -e 's#^URL: *\(.*\)#\1#g'
 }
 export -f parse_svn_url
 
 parse_svn_repository_root() {
- svn info 2>/dev/null | grep -e '^Repository Root:*' | sed -e 's#^Repository Root: *\(.*\)#\1\/#g '
+ svn info 2>/dev/null | grep -e '^Repository Root:*' | sed -e 's#^Repository Root: *\(.*\)#\1\/#g'
 }
 export -f parse_svn_repository_root
 
@@ -99,8 +95,3 @@ safe_rm()
         fi
     done
 }
-
-# bash git completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
