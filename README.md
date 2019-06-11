@@ -1,1 +1,1 @@
-# home
+# My home directory configuration files
