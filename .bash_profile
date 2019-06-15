@@ -20,7 +20,7 @@ PURPLE='\[\e[1;35m\]'
 NC='\[\e[0m\]' # No Color
 
 PS1="${BLUE}\\h ${LIGHTBLUE}\\u ${BOLDYELLOW}[\\W] ${RED}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 # bash git completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
