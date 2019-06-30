@@ -1,3 +1,6 @@
+# My ZSH theme
+# Last modifed: 2019-6-30
+
 local ret_status="%(?:%{$fg_bold[green]%}[%*] :%{$fg_bold[red]%}[%*] )"
 PROMPT='${ret_status}%{$fg[yellow]%}%M %{$fg[cyan]%}%n%{$reset_color%}:%{$fg[blue]%}%c%{$reset_color%} $(git_prompt_info)%(!.#.$) '
 
