@@ -5,7 +5,7 @@ export GREP_OPTIONS='--color=auto'
 export LSCOLORS=gxfxcxdxbxegedabagacad # Dark lscolor scheme
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=100000
-export HISTSIZE=5000
+export HISTSIZE=10000
 
 RED='\[\e[1;31m\]'
 BOLDYELLOW='\[\e[1;33m\]'
@@ -67,10 +67,7 @@ alias cic='set completion-ignore-case On'   # cic:          Make tab-completion 
 mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
-
-alias flushDNS='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache'  # flushDNS:     Flush out the DNS Cache
-#alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
-alias ipInfo0='ipconfig getpacket en0'              # ipInfo0:      Get info on connections for en0
-alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on connections for en1
-alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
-
+alias flushDNS='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache'  # flushDNS Cache
+alias ipInfo0='ipconfig getpacket en0'      # ipInfo0:      Get info on connections for en0
+alias ipInfo1='ipconfig getpacket en1'      # ipInfo1:      Get info on connections for en1
+alias showBlocked='sudo ipfw list'          # showBlocked:  All ipfw rules inc/ blocked IPs
