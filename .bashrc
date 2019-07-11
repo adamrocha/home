@@ -2,7 +2,7 @@
 
 export TERM=xterm-color
 export CLICOLOR=1
-export GREP_OPTIONS='--color=auto'
+#export GREP_OPTIONS='--color=auto'
 export LSCOLORS=gxfxcxdxbxegedabagacad # Dark lscolor scheme
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=200000
@@ -96,6 +96,7 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+alias grep='grep --color-auto'
 alias ll='ls -halF'
 alias la='ls -A'
 alias l='ls -CF'
