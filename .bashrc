@@ -8,6 +8,7 @@ export HISTCONTROL=ignoredups
 export HISTFILESIZE=100000
 export HISTSIZE=10000
 
+WHITE='\[\033[38;5;15m\]'
 RED='\[\e[1;31m\]'
 BOLDYELLOW='\[\e[1;33m\]'
 GREEN='\[\e[0;32m\]'
@@ -16,11 +17,11 @@ DARKBROWN='\[\e[1;33m\]'
 DARKGRAY='\[\e[1;30m\]'
 CUSTOMCOLORMIX='\[\e[1;30m\]'
 DARKCUSTOMCOLORMIX='\[\e[1;32m\]'
-LIGHTBLUE="\[\033[1;36m\]"
+LIGHTBLUE='\[\033[1;36m\]'
 PURPLE='\[\e[1;35m\]'
 NC='\[\e[0m\]' # No Color
 
-PS1="${BLUE}\\h ${LIGHTBLUE}\\u ${BOLDYELLOW}[\\W] ${RED}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
+PS1="${WHITE}[\\T] ${BOLDYELLOW}\\u${PURPLE}@${LIGHTBLUE}\\h${WHITE}:\w\[$(tput sgr0)\] ${RED}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
 
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
