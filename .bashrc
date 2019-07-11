@@ -7,8 +7,9 @@ export LSCOLORS=gxfxcxdxbxegedabagacad # Dark lscolor scheme
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=200000
 export HISTSIZE=10000
+export LESS='-RS#3NM~g'
 
-WHITE='\[\033[38;5;15m\]'
+WHITE='\[\e[38;5;15m\]'
 RED='\[\e[1;31m\]'
 BOLDYELLOW='\[\e[1;33m\]'
 GREEN='\[\e[0;32m\]'
@@ -17,7 +18,7 @@ DARKBROWN='\[\e[1;33m\]'
 DARKGRAY='\[\e[1;30m\]'
 CUSTOMCOLORMIX='\[\e[1;30m\]'
 DARKCUSTOMCOLORMIX='\[\e[1;32m\]'
-LIGHTBLUE='\[\033[1;36m\]'
+LIGHTBLUE='\[\e[1;36m\]'
 PURPLE='\[\e[1;35m\]'
 NC='\[\e[0m\]' # No Color
 
