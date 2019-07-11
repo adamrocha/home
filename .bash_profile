@@ -1,4 +1,5 @@
 #!/bin/bash
+
 export TERM=xterm-color
 export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
@@ -6,7 +7,9 @@ export LSCOLORS=gxfxcxdxbxegedabagacad # Dark lscolor scheme
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=100000
 export HISTSIZE=10000
+export LESS='-RS#3NM~g'
 
+WHITE='\[\e[38;5;15m\]'
 RED='\[\e[1;31m\]'
 BOLDYELLOW='\[\e[1;33m\]'
 GREEN='\[\e[0;32m\]'
@@ -15,12 +18,11 @@ DARKBROWN='\[\e[1;33m\]'
 DARKGRAY='\[\e[1;30m\]'
 CUSTOMCOLORMIX='\[\e[1;30m\]'
 DARKCUSTOMCOLORMIX='\[\e[1;32m\]'
-LIGHTBLUE="\[\033[1;36m\]"
+LIGHTBLUE='\[\e[1;36m\]'
 PURPLE='\[\e[1;35m\]'
 NC='\[\e[0m\]' # No Color
 
-PS1="${BLUE}\\h ${LIGHTBLUE}\\u ${BOLDYELLOW}[\\W] ${RED}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+PS1="${WHITE}[\\t] ${BOLDYELLOW}\\u${PURPLE}@${LIGHTBLUE}\\h${WHITE}:\w\[$(tput sgr0)\] ${RED}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
 
 # bash git completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
