@@ -4,8 +4,8 @@ export TERM=xterm-color
 export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 export LSCOLORS=gxfxcxdxbxegedabagacad # Dark lscolor scheme
-export HISTCONTROL=ignoredups
-export HISTFILESIZE=100000
+export HISTCONTROL=ignoreboth
+export HISTFILESIZE=200000
 export HISTSIZE=10000
 
 WHITE='\[\033[38;5;15m\]'
@@ -28,27 +28,14 @@ parse_git_branch() {
 }
 export -f parse_git_branch
 
-
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
 # append to the history file, don't overwrite it
 shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -87,7 +74,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -101,6 +87,7 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
+    
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -112,7 +99,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
 alias ll='ls -halF'
 alias la='ls -A'
 alias l='ls -CF'
