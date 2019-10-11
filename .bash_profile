@@ -73,3 +73,4 @@ alias flushDNS='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper
 alias ipInfo0='ipconfig getpacket en0'      # ipInfo0:      Get info on connections for en0
 alias ipInfo1='ipconfig getpacket en1'      # ipInfo1:      Get info on connections for en1
 alias showBlocked='sudo ipfw list'          # showBlocked:  All ipfw rules inc/ blocked IPs
+export PATH="/usr/local/sbin:$PATH"
