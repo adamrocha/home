@@ -23,7 +23,6 @@ NC='\[\e[0m\]' # No Color
 ENV=$(hostname |cut -d. -f2)
 
 PS1="${WHITE}[\\t] ${BOLDYELLOW}\\u${PURPLE}@${LIGHTBLUE}\\h${WHITE}:\w ${GREEN}\$?\[$(tput sgr0)\] ${RED}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
-#PS1="${WHITE}[\\t] ${BOLDYELLOW}\\u${PURPLE}@${LIGHTBLUE}\\h.${ENV}${WHITE}:\w\[$(tput sgr0)\] ${RED}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
 
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
