@@ -1,4 +1,6 @@
-# Commonly used commands
+#!/usr/bin/env bash
+
+# Common use commands
 alias grep='grep --color'
 alias ll='ls -halF'
 alias la='ls -A'
