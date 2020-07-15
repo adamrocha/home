@@ -24,6 +24,9 @@ ENV=$(hostname |cut -d. -f2)
 
 PS1="${WHITE}[\\t] ${BOLDYELLOW}\\u${PURPLE}@${LIGHTBLUE}\\h${WHITE}:\w ${GREEN}\$?\[$(tput sgr0)\] ${RED}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
 
+# Use this config to include subdomains in prompt
+# PS1="${WHITE}[\\t] ${BOLDYELLOW}\\u${PURPLE}@${LIGHTBLUE}\\h.${ENV}${WHITE}:\w ${GREEN}\$?\[$(tput sgr0)\] ${RED}\$(parse_git_branch)${DARKCUSTOMCOLORMIX}$ ${NC}"
+
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
