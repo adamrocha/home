@@ -1,4 +1,5 @@
 syntax on
-set nu
+set number
+set smartcase
 set tabstop=4
 set expandtab
